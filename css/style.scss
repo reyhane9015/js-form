@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    max-width: 1440px;
+    overflow-y: auto;
+    .home_content{
+        display: flex;
+        width: 80%;
+        height: 100%;
+        margin: 30px auto;
+        transition: all 0.5s ease;
+        form {
+            flex: 1;
+            width: 100%;
+            height: 100vh;
+            .head-form {
+                display: flex;
+                @media (max-width:1200px) {
+                    flex-direction: column;
+                }
+                .left-section {
+                    flex: 0.3;
+                    .photo {
+                        position: relative;
+                        width: 80%;
+                        height: 270px;
+                        display: block;
+                        margin: auto;
+                        background-color: #efefef;
+                        border-radius: 5px;
+                        @media (max-width:1200px) {
+                            width: 50%;
+                            height: 250px;
+                            margin-bottom: 20px;
+                        }
+                        a {
+                            text-decoration: none;
+                            position: absolute;
+                            white-space: nowrap;
+                           left: 50%;
+                           top: 50%;
+                           transform: translate(-50%,-50%);
+                            &:hover {
+                                color: olive;
+                            }
+                        }
+                    }
+                }
+                .right-section {
+                    flex: 0.7;
+                    width: 100%;
+                    margin-left: 30px;
+                    @media (max-width: 1200px) {
+                        margin-left: 0;
+                    }
+                }
+            }
+            .input-row {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    label {
+                        color: rgb(72, 72, 75);
+                    }
+                    input , textarea{
+                        width: 100%;
+                        background-color: #efefef;
+                        border: none;
+                        outline: none;
+                        border-radius: 5px;
+                        height: 60px;
+                        margin-top: 10px;
+                        &:focus {
+                        background-color: #fff;
+                        border: 0.5px solid rgb(193, 193, 193);
+                        }
+                        &::placeholder{
+                            padding-left: 10px;
+                        }
+                    }
+                textarea {
+                    height: 80px;
+                }
+                .label-content {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                    a {
+                        text-decoration: none;
+                    }
+                }
+                .social-media-output {
+                    width: 100%;
+                    min-height: 60px;
+                    background-color: #efefef;
+                    border-radius: 5px;
+                    ul {
+                        padding: 12px 22px;
+                        li {
+                            margin-bottom: 15px;
+                            position: relative;
+                            display: flex;
+                            justify-content: space-between;
+                            button {
+                                border: none;
+                                position: absolute;
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                                i {
+                                    font-size: 15px;
+                                }
+                                &:nth-child(1) {
+                                    right: 0;
+                                }
+                                &:nth-child(2) {
+                                    right: 25px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .social {
+                padding: 20px 0;
+            }
+           .btn-container{
+                text-align: center;
+                .btn-close {
+                    width: 80px;
+                    background-color: darkblue;
+                    color: #fff;
+                    border: none;
+                    padding: 15px;
+                    text-align: center;
+                    border-radius: 4px;
+                    &:hover{
+                      cursor: pointer;
+                      background-color: rgb(5, 5, 80);
+                    }
+                }
+           }            
+           .backdrop {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0,0.3);
+                display: none;
+                &.open {
+                    display: block;
+                }
+                .social-media-modal {
+                    position: relative;
+                    padding: 40px;
+                    margin: 200px auto;
+                    width: 400px;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    .top-close{
+                        position: absolute;
+                        right: 10px;
+                        top: 13px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                        i {
+                            font-size: 25px;
+                        }
+                    }
+                  .btns {
+                      .btn {
+                            border: none;
+                            color: #fff;
+                            padding: 5px;
+                            border-radius: 4px;
+                        }
+                        .cancel {
+                            background: rgb(185, 225, 185);
+                            &:hover {
+                                background: rgb(221, 245, 221);
+                                cursor: pointer;
+                            }
+                        }
+                        .save {
+                            background-color: darkblue;
+                            &:hover {
+                                background: rgb(5, 5, 99);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .output {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            padding: 10px 5px;
+            margin-top: 10px;
+            background-color: #efefef;
+            display: none;
+            &.open{
+               display: block;
+            }
+            .close-output {
+                position: absolute;
+                right: 13px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            p{
+                color: rgb(72, 72, 75);
+            }
+        }
+    }
+}
