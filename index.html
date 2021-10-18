@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Dashboard</title>
 
+
+    <!-- jquery source: https://jqueryui.com/sortable/ -->
+    
 </head>
 <body>
    <div class="container">
@@ -60,7 +64,7 @@
                     <label for="">Social media</label>
                     <a href="#" id="addItem">add item +</a>
                 </div>
-                <div class="social-media-output"></div>
+                <div class="social-media-output" id="social"></div>
             </div>
             <div class="backdrop" onclick="closeSocialMediaModal()">
                 <div class="social-media-modal" onclick="event.stopPropagation()">
@@ -90,6 +94,9 @@
     </div>
    </div>
 
-<script src="js/main.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+   <script src="js/main.js"></script>
+
 </body>
 </html>

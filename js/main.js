@@ -100,14 +100,32 @@ function saveInfo(id) {
 }
 
 function printSoc() {
-    let myLi = socialArr.reduce((total, elem) => {
-        return total+= `<li>
+    let myLi = socialArr.sort((a,b) => a.sort-b.sort).reduce((total, elem) => {
+        return total+= `<li data-id="${elem.id}">
                             `+ elem.description + `
                             <button onclick="editSoc(${elem.id})"><i class='bx bxs-edit-alt' ></i></button>
                             <button onclick="deleteSoc(${elem.id})"><i class='bx bx-x-circle'></i></button>
                         </li>`
     },'');
-    document.querySelector('.social-media-output').innerHTML = '<ul>' + myLi + '</ul>';
+    document.querySelector('.social-media-output').innerHTML = '<ul id="list">' + myLi + '</ul>';
+    $( function() {
+        $( "#list" ).sortable({
+            stop:(event,ui) => {
+                [...document.querySelectorAll("#list li")].forEach((row,index) => {
+                    // first way
+                    // for(let i=0;i< socialArr.length; i++){
+                    //     if (socialArr[i].id == row.dataset.id) {
+                    //         socialArr[i].sort = index;
+                    //         break;
+                    //     }
+                    // }
+
+                    // secound way
+                    socialArr.filter(item => item.id == row.dataset.id)[0].sort = index;
+                })
+            }
+        });
+      } );
 }
 
 function deleteSoc(id) {
