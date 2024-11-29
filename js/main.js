@@ -125,7 +125,15 @@ function printSoc() {
                     // }
 
                     // secound way
-                    socialArr.filter(item => item.id == row.dataset.id)[0].sort = index;
+                    // socialArr.filter(item => item.id == row.dataset.id)[0].sort = index;
+
+
+                  let item = socialArr.filter(item => item.id == row.dataset.id)[0];
+                    if (item) {
+                        item.sort = index;
+                    } else {
+                        console.log('Item not found');
+                    }
                 })
             }
         });
