@@ -1,4 +1,6 @@
 function getData(e) {
+
+  e.preventDefault();
  
     let name = document.getElementById("name").value;
     let position = document.getElementById("position").value;
