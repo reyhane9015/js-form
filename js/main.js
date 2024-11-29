@@ -80,11 +80,13 @@ function saveInfo(id) {
 
         console.log("id is undefined");
 
-        socialObj = {url,namee,description,id:socialArr.length}
+        let socialObj = {url,namee,description,id:socialArr.length}
         socialArr.push(socialObj);
         console.log(socialArr);
     }else {
-        let data = socialArr.filter(elem => elem.id == id)[0];
+        // let data = socialArr.filter(elem => elem.id == id)[0];
+
+        let data = socialArr.find(elem => elem.id === id);
 
         console.log(data);
         console.log("id is defined");
@@ -139,7 +141,9 @@ function editSoc(id) {
 
   callModal(id);
 
-  let data = socialArr.filter(elem => elem.id == id)[0];
+  // let data = socialArr.filter(elem => elem.id == id)[0];
+
+  let data = socialArr.find(elem => elem.id === id); 
 
     document.getElementById("url").value = data.url;
     document.getElementById("namee").value = data.namee;
