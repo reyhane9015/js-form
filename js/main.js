@@ -116,24 +116,14 @@ function printSoc() {
         $( "#list" ).sortable({
             stop:(event,ui) => {
                 [...document.querySelectorAll("#list li")].forEach((row,index) => {
-                    // first way
-                    // for(let i=0;i< socialArr.length; i++){
-                    //     if (socialArr[i].id == row.dataset.id) {
-                    //         socialArr[i].sort = index;
-                    //         break;
-                    //     }
-                    // }
-
-                    // secound way
-                    // socialArr.filter(item => item.id == row.dataset.id)[0].sort = index;
-
-
-                  let item = socialArr.filter(item => item.id == row.dataset.id)[0];
-                    if (item) {
-                        item.sort = index;
-                    } else {
-                        console.log('Item not found');
+                    
+                    for(let i=0;i< socialArr.length; i++){
+                        if (socialArr[i].id == row.dataset.id) {
+                            socialArr[i].sort = index;
+                            break;
+                        }
                     }
+
                 })
             }
         });
