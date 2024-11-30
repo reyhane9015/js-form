@@ -3,16 +3,13 @@ function getData(e) {
     e.preventDefault();
    
       let name = document.getElementById("name").value;
-      let position = document.getElementById("position").value;
-      let locationn = document.getElementById("location").value;
-      let education = document.getElementById("education").value;
+      let address = document.getElementById("address").value;
       let phone = document.getElementById("phone").value;
       let email = document.getElementById("email").value;
-      let form = document.getElementById("form").value;
       let output = document.querySelector(".output");
   
   
-      let Arr = {name,position,locationn,education,phone,email,phone};
+      let Arr = {name,address,phone,email};
       console.log(Arr);
       console.log(Object.keys(Arr));
       console.log(Object.values(Arr));
@@ -80,7 +77,7 @@ function getData(e) {
   
           console.log("id is undefined");
   
-          let socialObj = {url,namee,description,id:socialArr.length}
+          let socialObj = {url,namee,description,id:socialArr.length, sort: socialArr.length}
           socialArr.push(socialObj);
           console.log(socialArr);
       }else {
