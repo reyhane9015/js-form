@@ -66,6 +66,7 @@ function getData(e) {
   
   
   function saveInfo(id) {
+
   
       let url = document.getElementById("url").value;
       let namee = document.getElementById("namee").value;
@@ -106,7 +107,7 @@ function getData(e) {
       let myLi = socialArr.sort((a,b) => a.sort-b.sort).reduce((total, elem) => {
           return total+= `<li data-id="${elem.id}">
                               `+ elem.description + `
-                              <button onclick="editSoc(${elem.id})"><i class='bx bxs-edit-alt' ></i></button>
+                              <button type="button" onclick="editSoc(${elem.id})"><i class='bx bxs-edit-alt' ></i></button>
                               <button onclick="deleteSoc(${elem.id})"><i class='bx bx-x-circle'></i></button>
                           </li>`
       },'');
@@ -135,8 +136,12 @@ function getData(e) {
   }
   
   function editSoc(id) {
+
+
   
     callModal(id);
+
+
   
     let data = socialArr.filter(elem => elem.id == id)[0];
   

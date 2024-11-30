@@ -226,11 +226,11 @@ body {
 }
 
 .container .home_content form .backdrop .social-media-modal .btns .cancel {
-  background: #d67c7c;
+  background: #f09a9a;
 }
 
 .container .home_content form .backdrop .social-media-modal .btns .cancel:hover {
-  background: #ddf5dd;
+  background: #df6969;
   cursor: pointer;
 }
 
