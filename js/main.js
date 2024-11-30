@@ -10,6 +10,7 @@ function getData(e) {
   
   
       let Arr = {name,address,phone,email};
+
       console.log(Arr);
       console.log(Object.keys(Arr));
       console.log(Object.values(Arr));
@@ -83,10 +84,10 @@ function getData(e) {
           console.log(socialArr);
       }else {
   
-          let data = socialArr.filter(elem => elem.id == id)[0];
+        //   let data = socialArr.filter(elem => elem.id == id)[0];
   
-          // or
-          // let data = socialArr.find(elem => elem.id === id);
+    
+          let data = socialArr.find(elem => elem.id === id);
   
           console.log(data);
           console.log("id is defined");
@@ -142,11 +143,7 @@ function getData(e) {
     callModal(id);
 
 
-  
-    let data = socialArr.filter(elem => elem.id == id)[0];
-  
-      //   or
-      //   let data = socialArr.find(elem => elem.id === id); 
+        let data = socialArr.find(elem => elem.id === id); 
   
       document.getElementById("url").value = data.url;
       document.getElementById("namee").value = data.namee;
